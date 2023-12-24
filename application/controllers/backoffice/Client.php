@@ -52,6 +52,7 @@ class Client extends MY_Controller
 
 	public function simpan()
 	{
+		$data['slug'] = _slug(_post('name'));
 		$data['name'] = _post('name');
 		$data['image'] = _post('image');
 		$data['youtube'] = _post('youtube');
@@ -84,7 +85,7 @@ class Client extends MY_Controller
 	}
 
 	public function getAll(){
-		$read_data = $this->M_crud->read_data($this->tbl,'id,name as nama');
+		$read_data = $this->M_crud->read_data($this->tbl,'id,name as nama',null,"FIELD(name,'None') DESC");
 		echo json_encode($read_data);
 	}
 }

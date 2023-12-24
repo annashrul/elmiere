@@ -49,9 +49,18 @@ if ( ! function_exists('handleOr'))
 }
 if ( ! function_exists('_slug'))
 {
-	function _slug($vars)
+	function _slug($string,$spaceRepl = '-')
 	{
-		return url_title(_post($vars),'dash',true);
+		$string = str_replace('&', 'and', $string);
+
+		$string = preg_replace('/[^a-zA-Z0-9 _-]/', '', $string);
+
+		$string = strtolower($string);
+
+		$string = preg_replace('/[ ]+/', ' ', $string);
+
+		$string = str_replace(' ', $spaceRepl, $string);
+		return $string;
 	}
 }
 if ( ! function_exists('view'))

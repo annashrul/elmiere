@@ -32,9 +32,9 @@ if ($row != null): ?>
 									</div>
 								</div>
 							</td>
-							<td class='text-center'><img src="<?= $val['image'] == '' ?$this->noImage : $val['image'] ?>" style='height:50px;width: 100px' alt=''></td>
+							<td class='text-center'><img src="<?= $val['image'] == '' ?$this->noImage : $val['image'] ?>" style='max-height:50px;max-width: 100px;border-radius: 10px' alt=''></td>
 							<td>
-								<a target="_blank" href="<?=$val['link']?>"><?= $val['name'] ?></a>
+								<?= $val['name'] ?>
 							</td>
 						</tr>
 						<?php $data[$this->no] = $no - 1; endforeach; ?>

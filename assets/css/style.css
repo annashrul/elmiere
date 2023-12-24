@@ -34,6 +34,14 @@
 /*----------------------------------------*/
 /*  Theme default CSS
 /*----------------------------------------*/
+
+a.client-elmiere:hover{
+	color:#eb9d37 !important;
+	border-color: #eb9d37 !important;
+}
+li > a.active{
+	color:red !important;
+}
 .clear {
   clear: both; }
 
@@ -4956,7 +4964,7 @@ ul.ps10-list {
       margin: 5px auto; }
 .testimonial-carouselV1 .owl-nav {
   position: absolute;
-  top: 80px;
+  top: 50px;
   left: 0;
   width: 100%;
   height: auto; }
@@ -4966,9 +4974,9 @@ ul.ps10-list {
     border-radius: 50%;
     text-align: center;
     padding: 5px;
-    background-color: transparent;
+    background-color: fff;
     border: 1px solid #fff;
-    color: #fff;
+    color: black;
     font-size: 36px; }
   .testimonial-carouselV1 .owl-nav .owl-prev {
     float: left; }

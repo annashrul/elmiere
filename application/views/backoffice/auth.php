@@ -264,7 +264,7 @@
                         }
                     } else {
                         setSite(res.result);
-                        window.location.href = "<?=base_url().'backoffice/dashboard'?>";
+                        window.location.href = "<?=base_url().'backoffice/setting'?>";
                     }
                 },
                 error: function(jqXHR, ajaxOptions, thrownError) {

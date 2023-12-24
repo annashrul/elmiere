@@ -6,7 +6,7 @@
 <div class="row mt-3">
     <div class="col-xl">
         <div class="float-start">
-            Menampilkan Total <?=$no+1?> Dari <?=$totalRows?> Data atau Berjumlah <?=ceil((int)$totalRows / 15)?> Halaman
+            Menampilkan Total <?=$no+1?> Dari <?=$totalRows?> Data atau Berjumlah <?=ceil((int)$totalRows / 5)?> Halaman
         </div>
         <div class="float-end">
 			<button class="btn btn-sm <?=$currentPages==1 ? 'btn-secondary' : 'btn-primary'?>" id="prevPage<?=$pages?>" onclick="prevLoad(1)" <?=$currentPages==1 ? 'disabled' : null?>><i class="bx bx-left-arrow"></i></button>

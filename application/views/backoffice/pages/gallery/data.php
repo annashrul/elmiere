@@ -32,7 +32,7 @@ if ($row != null): ?>
 									</div>
 								</div>
 							</td>
-							<td><img src='<?= base_url().$val['image'] ?>' style='height:50px;width: 100px;border-radius: 10px' alt=''></td>
+							<td><img src='<?= base_url().$val['image'] ?>' style='max-height:50px;max-width: 100px;border-radius: 10px' alt=''></td>
 							<td><?= $val['name'] ?></td>
 							<td><?= $val['caption'] ?></td>
 						</tr>

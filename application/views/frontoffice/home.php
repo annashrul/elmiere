@@ -263,12 +263,9 @@
 		<div class='row'>
 			<div class='col-md-6'>
 				<div class='about-img a3-img'>
-					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-1.jpg' alt class='a3img-1 wow fadeInLeft'
-						 data-wow-delay='.75s'>
-					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-2.jpg' alt class='a3img-2 wow fadeInLeft'
-						 data-wow-delay='.25s'>
-					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-2.jpg' alt class='a3img-3 wow fadeInLeft'
-						 data-wow-delay='.25s'>
+					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-1.jpg' alt class='a3img-1 wow fadeInLeft' data-wow-delay='.75s'>
+					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-2.jpg' alt class='a3img-2 wow fadeInLeft' data-wow-delay='.25s'>
+					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-2.jpg' alt class='a3img-3 wow fadeInLeft' data-wow-delay='.25s'>
 				</div>
 			</div>
 			<div class='col-md-6'>
@@ -278,20 +275,10 @@
 							<p class='wow fadeInUp' data-wow-delay='.15s'>About us</p>
 							<h3 class='wow fadeInUp' data-wow-delay='.25s'>Photography Is Great</h3>
 						</div>
-						<p class='wow fadeInUp' data-wow-delay='.35s'>Photography is like a moment, an instant. You need
-							a half-second to get the
-							photo. So it's good to capture people when they are themselves.I became
-							passionate about design filmmaking when I graduated from UCLA.</p>
+						<p class='wow fadeInUp' data-wow-delay='.35s'><?=$about['title']?></p>
 						<ul>
-							<li class="wow fadeInUp" data-wow-delay=".45s">You're shooting, like, one frame every twenty
-								minutes, so that's
-							</li>
-							<li class="wow fadeInUp" data-wow-delay=".55s">Seconds of a film per day. Photography is a
-								pursuit that allows
-							</li>
-							<li class="wow fadeInUp" data-wow-delay=".65s">Hands-on with what you show people of either
-								yourself or the
-							</li>
+							<li class="wow fadeInUp" data-wow-delay=".45s"><?=$about['caption']?></li>
+
 						</ul>
 						<p class="wow fadeInUp" data-wow-delay=".75s">You do have a modicum of creative freedom as an
 							actor, but you're still very
@@ -312,6 +299,8 @@
 				<div class='section-titleV1'>
 					<p class='wow fadeInUp' data-wow-delay='.15s'>OUR RECENT WORKS</p>
 					<h3 class='wow fadeInUp' data-wow-delay='.35s'>Our Portofolio</h3>
+					<a style="color: white" href="<?=base_url().'portofolio'?>"><u>See All</u></a>
+
 				</div>
 			</div>
 		</div>
@@ -338,10 +327,10 @@
 	<div class='container-fluid'>
 		<div class='row'>
 			<div class='col-md-12'>
-
 				<div class='section-titleV1'>
 					<p class='wow fadeInUp' data-wow-delay='.15s'>Check Our Gallery</p>
 					<h3 class='wow fadeInUp' data-wow-delay='.35s'>Our Best Shoots</h3>
+					<a style='color: white' href="<?= base_url() . 'gallery' ?>"><u>See All</u></a>
 
 				</div>
 			</div>
@@ -354,7 +343,7 @@
 					</div>
 					<div class='g6s-info'>
 						<h4><a class='fancyGallery' data-fancybox='group-4' href="<?= $url . $row['image'] ?>"><?= $row['caption'] ?></a></h4>
-						<p><?= $row['caption'] ?></p>
+<!--						<p>--><?//= $row['caption'] ?><!--</p>-->
 					</div>
 				</div>
 			<?php endforeach; ?>

@@ -436,14 +436,14 @@ i[class^="flaticon-"]:before {
   .section-titleV1 p {
     font-size: 18px;
     letter-spacing: 0px;
-    color: #545361;
+    color: #fff;
     text-transform: uppercase;
     font-weight: 600;
     line-height: 24px; }
   .section-titleV1 h3 {
     font-size: 36px;
     letter-spacing: 0px;
-    color: #43435b;
+    color: #fff;
     line-height: 44px;
     font-weight: 500;
     margin: 10px auto;
@@ -4460,6 +4460,9 @@ ul.ps10-list {
 .service-area {
   padding-top: 40px; }
 
+.single-service .ss-icon i{
+	color:white !important;
+}
 .single-service {
   position: relative;
   max-width: 350px;
@@ -4478,15 +4481,16 @@ ul.ps10-list {
     padding-top: 20px;
     margin-bottom: 15px; }
     .single-service .ss-icon i {
-      color: #fff;
+      color: white;
       font-size: 36px;
-      line-height: 36px; }
+      line-height: 36px;
+	}
   .single-service .ss-text {
     position: relative; }
     .single-service .ss-text h4 {
       font-size: 20px;
       letter-spacing: 0px;
-      color: #43435b;
+      color: #fff;
       font-weight: 500;
       text-transform: uppercase;
       line-height: 30px;
@@ -4499,7 +4503,7 @@ ul.ps10-list {
     .single-service .ss-text p {
       font-size: 16px;
       letter-spacing: 0px;
-      color: #43435b;
+      color: #fff;
       font-weight: 400;
       line-height: 24px;
       margin-bottom: 15px;
@@ -4551,6 +4555,8 @@ ul.ps10-list {
       z-index: 1; }
   .single-service:hover .ss-text h4 {
     color: #fff; }
+.single-service:hover .ss-icon i {
+	color: #eb9d37 !important; }
   .single-service:hover .ss-text p {
     color: #fff; }
   .single-service:hover .ss-text a {
@@ -4559,6 +4565,7 @@ ul.ps10-list {
     .single-service:hover .ss-text a:hover {
       color: #eb9d37;
       border-color: #eb9d37; }
+
 
 /*------------- Service Style 1 END -------------*/
 /*----------------------------------------*/
@@ -7332,6 +7339,14 @@ form.cf button {
     position: relative;
     padding-top: 25px; } }
 @media only screen and (max-width: 767px) {
+	.about-img{
+		background: url("../img/bg/innertop-bg-3.jpg") !important;
+
+	}
+	.about-img>img{
+		border:10px solid red;
+		display: none;
+	}
   .hero_V18 .hero-content .hero-text {
     max-width: 350px; }
 
@@ -7899,6 +7914,7 @@ form.cf button {
     letter-spacing: 0px;
     font-size: 12px !important;
     font-weight: 300 !important; }
+
 
   .revSlideHero .tp-loop-wrap {
     padding-top: 20px; }

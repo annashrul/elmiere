@@ -237,49 +237,127 @@
 	</div>
 
 </section>
-<section id='about' class='about-area about-1 section-padding'>
+<!--<section id='about' class='about-area about-1 section-padding'>-->
+<!--	<div class='container'>-->
+<!--		<div class='row'>-->
+<!--			<div class='col-md-6'>-->
+<!--				<div class='about-img about3-img'>-->
+<!--					<img src='--><?//= $url . $about['image'] ?><!--' alt class='a3img-1'>-->
+<!--					<img src='--><?//= $url ?><!--assets/img/section-img/about-3.png' alt class='a3img-2 wow fadeInLeft'-->
+<!--						 data-wow-delay='.4s'>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class='col-md-6'>-->
+<!--				<div class='about-text about3-text'>-->
+<!--					<h3 class='wow fadeInUp' data-wow-delay='.2s'>--><?//= $about['title'] ?><!--</h3>-->
+<!--					<p class='wow fadeInUp' data-wow-delay='.4s'>--><?//= $about['caption'] ?><!--</p>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</section>-->
+
+
+<section id='about' class='about-area about-1 bgDark section-padding'>
 	<div class='container'>
 		<div class='row'>
 			<div class='col-md-6'>
-				<div class='about-img about3-img'>
-					<img src='<?= $url . $about['image'] ?>' alt class='a3img-1'>
-					<img src='<?= $url ?>assets/img/section-img/about-3.png' alt class='a3img-2 wow fadeInLeft'
-						 data-wow-delay='.4s'>
+				<div class='about-img a3-img'>
+					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-1.jpg' alt class='a3img-1 wow fadeInLeft'
+						 data-wow-delay='.75s'>
+					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-2.jpg' alt class='a3img-2 wow fadeInLeft'
+						 data-wow-delay='.25s'>
+					<img src='https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/section-img/about-2-2.jpg' alt class='a3img-3 wow fadeInLeft'
+						 data-wow-delay='.25s'>
 				</div>
 			</div>
 			<div class='col-md-6'>
-				<div class='about-text about3-text'>
-					<h3 class='wow fadeInUp' data-wow-delay='.2s'><?= $about['title'] ?></h3>
-					<p class='wow fadeInUp' data-wow-delay='.4s'><?= $about['caption'] ?></p>
+				<div class='about-text'>
+					<div class='section-text'>
+						<div class='section-titleV1'>
+							<p class='wow fadeInUp' data-wow-delay='.15s'>About us</p>
+							<h3 class='wow fadeInUp' data-wow-delay='.25s'>Photography Is Great</h3>
+						</div>
+						<p class='wow fadeInUp' data-wow-delay='.35s'>Photography is like a moment, an instant. You need
+							a half-second to get the
+							photo. So it's good to capture people when they are themselves.I became
+							passionate about design filmmaking when I graduated from UCLA.</p>
+						<ul>
+							<li class="wow fadeInUp" data-wow-delay=".45s">You're shooting, like, one frame every twenty
+								minutes, so that's
+							</li>
+							<li class="wow fadeInUp" data-wow-delay=".55s">Seconds of a film per day. Photography is a
+								pursuit that allows
+							</li>
+							<li class="wow fadeInUp" data-wow-delay=".65s">Hands-on with what you show people of either
+								yourself or the
+							</li>
+						</ul>
+						<p class="wow fadeInUp" data-wow-delay=".75s">You do have a modicum of creative freedom as an
+							actor, but you're still very
+							much a cipher for other people's art. Photography gives you the opportunity
+							to use your sensibility and everything you are to say something.</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<section class='portfolio-area'>
-	<div class='gallery6-area'>
-		<div class='container-fluid'>
-			<div class='row'>
-				<div class='col-md-12'>
-					<div class='section-titleV1'>
-						<p class='wow fadeInUp' data-wow-delay='.15s'>Our Recent Works</p>
-						<h3 class='wow fadeInUp' data-wow-delay='.35s'>Our Portfolio</h3>
-					</div>
+
+<section class='gallery-area bgDark'>
+	<div class='container-fluid'>
+
+		<div class='row'>
+			<div class='col-md-12'>
+				<div class='section-titleV1'>
+					<p class='wow fadeInUp' data-wow-delay='.15s'>OUR RECENT WORKS</p>
+					<h3 class='wow fadeInUp' data-wow-delay='.35s'>Our Portofolio</h3>
 				</div>
 			</div>
-			<div class='gallery6-wrappper'>
-				<?php foreach ($gallery as $row): ?>
-					<div class='g6-single'>
-						<div class='g6s-img'>
-							<img src="<?= $url . $row['image'] ?>" alt>
-						</div>
-						<div class='g6s-info'>
-							<h4><a class='fancyGallery' data-fancybox='group-4' href="<?= $url . $row['image'] ?>"><?= $row['caption'] ?></a></h4>
-							<p><?= $row['caption'] ?></p>
-						</div>
+		</div>
+		<div class='row'>
+			<div class='portofolio-carousel owl-carousel owl-theme wow fadeInUp' data-wow-delay='.35s' style="padding: 0 !important;">
+				<?php foreach ($portofolio as $key=>$row):?>
+				<div class='single-album' style='' >
+					<div class='album-cat-title'>
+						<a href="<?=base_url().'portofolio/'.$row['slug']?>"><span><?=$row['name']?></span></a>
 					</div>
-				<?php endforeach; ?>
+					<div class='s-album-img' >
+						<?php foreach ($row['gallery'] as $key=>$item): if( $key < 3){?>
+							<img src="<?=base_url().$item?>" alt>
+						<?php } endforeach;?>
+					</div>
+				</div>
+				<?php endforeach;?>
+
 			</div>
+		</div>
+	</div>
+</section>
+<section class='gallery6-area'>
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='col-md-12'>
+
+				<div class='section-titleV1'>
+					<p class='wow fadeInUp' data-wow-delay='.15s'>Check Our Gallery</p>
+					<h3 class='wow fadeInUp' data-wow-delay='.35s'>Our Best Shoots</h3>
+
+				</div>
+			</div>
+		</div>
+		<div class='gallery6-wrappper'>
+			<?php foreach ($gallery as $row): ?>
+				<div class='g6-single'>
+					<div class='g6s-img'>
+						<img src="<?= $url . $row['image'] ?>" alt>
+					</div>
+					<div class='g6s-info'>
+						<h4><a class='fancyGallery' data-fancybox='group-4' href="<?= $url . $row['image'] ?>"><?= $row['caption'] ?></a></h4>
+						<p><?= $row['caption'] ?></p>
+					</div>
+				</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>
@@ -364,97 +442,19 @@
 			</div>
 		</div>
 		<div class='row'>
+			<?php foreach($service as $row):?>
 			<div class='col-lg-4 col-xs-6 col-md-4  col-sm-6 no-pad mar-1_br'>
 				<div class='single-service sspV3 wow fadeInUp' data-wow-delay='.15s'>
 					<div class='ss-icon'>
-						<i class='flaticon-031-monitor'></i>
+						<i class="<?=$row['icon']?>"></i>
 					</div>
 					<div class='ss-text'>
-						<h4>Regular Photography</h4>
-						<p>Photography is way of feeling of touching of
-							loving. What you have caught on film captu
-							red forever rememb little things. Photography
-							is like a moment, an instant. You need a half
-							second to get the photo.</p>
-
+						<h4><?=$row['title']?></h4>
+						<p><?=$row['caption']?></p>
 					</div>
 				</div>
 			</div>
-			<div class='col-lg-4 col-xs-6 no-pad mar-1_br'>
-				<div class='single-service sspV3 wow fadeInUp' data-wow-delay='.25s'>
-					<div class='ss-icon'>
-						<i class='flaticon-016-len-1'></i>
-					</div>
-					<div class='ss-text'>
-						<h4>Awesome photography</h4>
-						<p>Photography is way of feeling of touching of
-							loving. What you have caught on film captu
-							red forever rememb little things. Photography
-							is like a moment, an instant. You need a half
-							second to get the photo.</p>
-					</div>
-				</div>
-			</div>
-			<div class='col-md-4 no-pad mar-1_br'>
-				<div class='single-service sspV3 wow fadeInUp' data-wow-delay='.35s'>
-					<div class='ss-icon'>
-						<i class='flaticon-047-polaroid-1'></i>
-					</div>
-					<div class='ss-text'>
-						<h4>landscape</h4>
-						<p>Photography is way of feeling of touching of
-							loving. What you have caught on film captu
-							red forever rememb little things. Photography
-							is like a moment, an instant. You need a half
-							second to get the photo.</p>
-					</div>
-				</div>
-			</div>
-			<div class='col-md-4 no-pad mar-1_br'>
-				<div class='single-service sspV3 wow fadeInUp' data-wow-delay='.15s'>
-					<div class='ss-icon'>
-						<i class='flaticon-011-fisheye'></i>
-					</div>
-					<div class='ss-text'>
-						<h4>Videography</h4>
-						<p>Photography is way of feeling of touching of
-							loving. What you have caught on film captu
-							red forever rememb little things. Photography
-							is like a moment, an instant. You need a half
-							second to get the photo.</p>
-					</div>
-				</div>
-			</div>
-			<div class='col-md-4 no-pad mar-1_br'>
-				<div class='single-service sspV3 wow fadeInUp' data-wow-delay='.25s'>
-					<div class='ss-icon'>
-						<i class='flaticon-037-timer'></i>
-					</div>
-					<div class='ss-text'>
-						<h4>documentry making</h4>
-						<p>Photography is way of feeling of touching of
-							loving. What you have caught on film captu
-							red forever rememb little things. Photography
-							is like a moment, an instant. You need a half
-							second to get the photo.</p>
-					</div>
-				</div>
-			</div>
-			<div class='col-md-4 no-pad mar-1_br'>
-				<div class='single-service sspV3 wow fadeInUp' data-wow-delay='.35s'>
-					<div class='ss-icon'>
-						<i class='flaticon-028-landscape'></i>
-					</div>
-					<div class='ss-text'>
-						<h4>free image service</h4>
-						<p>Photography is way of feeling of touching of
-							loving. What you have caught on film captu
-							red forever rememb little things. Photography
-							is like a moment, an instant. You need a half
-							second to get the photo.</p>
-					</div>
-				</div>
-			</div>
+			<?php endforeach;?>
 		</div>
 	</div>
 </section>

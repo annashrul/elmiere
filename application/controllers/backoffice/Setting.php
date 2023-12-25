@@ -52,6 +52,7 @@ class Setting extends MY_Controller
 
 	public function simpan()
 	{
+		$data['whatsapp'] = _post('whatsapp');
 		$data['name'] = _post('name');
 		$data['facebook'] = _post('facebook');
 		$data['instagram'] = _post('instagram');

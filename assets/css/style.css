@@ -35,6 +35,29 @@
 /*  Theme default CSS
 /*----------------------------------------*/
 
+.portofolio-carousel .owl-nav.disabled{
+	display: block !important;
+}
+.portofolio-carousel .owl-nav {
+	position: absolute;
+	top: 35%;
+	left: 0;
+	width: 100%;
+	height: auto; }
+.portofolio-carousel .owl-nav [class*=owl-] {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	text-align: center;
+	padding: 5px;
+	background-color: fff;
+	border: 1px solid #fff;
+	color: black;
+	font-size: 36px; }
+.portofolio-carousel .owl-nav .owl-prev {
+	float: left; }
+.portofolio-carousel .owl-nav .owl-next {
+	float: right; }
 a.client-elmiere:hover{
 	color:#eb9d37 !important;
 	border-color: #eb9d37 !important;
@@ -6052,7 +6075,8 @@ form.fbd-comment-form button {
   position: relative;
   max-width: 1200px;
   margin: 0px auto;
-  padding: 120px 0px 60px; }
+  /*padding: 120px 0px 60px;*/
+}
 
 .gallery6-wrappper {
   margin: 0px;

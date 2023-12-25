@@ -89,8 +89,7 @@
 									<ul>
 										<li class='mega-menu'><a style="color:<?=$this->uri->segment(1)==''?'#eb9d37':'##f7f7f7'?>" href="<?=base_url()?>">Home</a></li>
 										<li class='mega-menu'><a style="color:<?=$this->uri->segment(1)=='portofolio'?'#eb9d37':'##f7f7f7'?>" href="<?=base_url().'portofolio'?>">Portofolio</a></li>
-										<li class='submenu-right'><a href='blog-1.html'>Blogs</a></li>
-										<li><a href='contact.html'>Contact Us</a></li>
+										<li class='mega-menu'><a style="color:<?=$this->uri->segment(1)=='gallery'?'#eb9d37':'##f7f7f7'?>" href="<?=base_url().'gallery'?>">Gallery</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -153,12 +152,13 @@
 			</div>
 			<div class="footer-social">
 				<ul>
-					<li><a href="<?=$setting['twitter']?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-					<li><a href="<?=$setting['behance']?>"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-					<li><a href="<?=$setting['facebook']?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="<?=$setting['pinterest']?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-					<li><a href="<?=$setting['linkedin']?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-					<li><a href="<?=$setting['instagram']?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					<li><a target="_blank" href="https://wa.me/<?=$setting['whatsapp']?>?text=hallo"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+					<li><a target='_blank' href="<?=$setting['twitter']?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a target='_blank' href="<?=$setting['behance']?>"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					<li><a target='_blank' href="<?=$setting['facebook']?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a target='_blank' href="<?=$setting['pinterest']?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+					<li><a target='_blank' href="<?=$setting['linkedin']?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+					<li><a target='_blank' href="<?=$setting['instagram']?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 		</div>

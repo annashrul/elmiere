@@ -10,6 +10,7 @@ if ($row != null): ?>
 						<th width="1%" class="text-center">#</th>
 						<th width='1%'>Logo</th>
 						<th>Name</th>
+						<th width='1%'>WhatsApp</th>
 						<th width='1%'>facebook</th>
 						<th width='1%'>instagram</th>
 						<th width='1%'>twitter</th>
@@ -31,6 +32,7 @@ if ($row != null): ?>
 							</td>
 							<td><img id="logoSite0" src='<?= base_url().$val['image'] ?>' style='height:50px;max-width: 70px;border-radius: 10px' alt=''></td>
 							<td><?= $val['name'] ?></td>
+							<td><a href="https://wa.me/<?=$val['whatsapp']?>?text=hallo" target="_blank"><?= $val['whatsapp'] ?></a></td>
 							<td><a href="<?= $val['facebook'] ?>" target="_blank"><?= $val['facebook'] ?></a></td>
 							<td><a href="<?= $val['instagram'] ?>" target="_blank"><?= $val['instagram'] ?></a></td>
 							<td><a href="<?= $val['twitter'] ?>" target="_blank"><?= $val['twitter'] ?></a></td>

@@ -533,12 +533,42 @@
                     items: 2
                 },
                 760: {
-                    items: 3
+                    items: 1
                 }
             }
         });
     }
     gallery_carousel();
+
+	function portofolio_carousel() {
+		var owl = $(".portofolio-carousel");
+		owl.owlCarousel({
+			loop: true,
+			margin: 0,
+			responsiveClass: true,
+			navigation: true,
+			navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+			nav: true,
+			items: 5,
+			smartSpeed: 2000,
+			dots: true,
+			autoplay: false,
+			autoplayTimeout: 5000,
+			center: true,
+			responsive: {
+				0: {
+					items: 1
+				},
+				480: {
+					items: 2
+				},
+				760: {
+					items: 5
+				}
+			}
+		});
+	}
+	portofolio_carousel();
 
 
     // Hero 6 Carousel
@@ -1590,7 +1620,7 @@ $('#sfv2-toggler').on('click',function() {
                     sliderType:"standard",
                     jsFileLocation:"revolution/js/",
                     sliderLayout:"fullscreen",
-                    dottedOverlay:"none",
+                    // dottedOverlay:"",
                     delay:9000,
                     navigation: {
                         keyboardNavigation:"off",

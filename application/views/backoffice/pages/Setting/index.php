@@ -22,9 +22,14 @@ $data['focus'] = 'name';
 			<div class="modal-body">
 				<div class="row mb-3">
 
-					<div class="col-md-12 mb-3">
+					<div class="col-md-6 mb-3">
 						<?php $label = 'name'; ?>
 						<label for="<?=$label?>" class="form-label"><?= getLabel($label) ?></label>
+						<input type="text" name="<?= $label ?>" id="<?= $label ?>" class="form-control">
+					</div>
+					<div class='col-md-6 mb-3'>
+						<?php $label = 'whatsapp'; ?>
+						<label for="<?= $label ?>" class="form-label"><?= getLabel($label) ?></label>
 						<input type="text" name="<?= $label ?>" id="<?= $label ?>" class="form-control">
 					</div>
 					<div class='col-md-6 mb-3'>
@@ -201,6 +206,7 @@ $data['focus'] = 'name';
 				attrId("twitter").val(data['twitter']);
 				attrId("behance").val(data['behance']);
 				attrId("pinterest").val(data['pinterest']);
+				attrId("whatsapp").val(data['whatsapp']);
 				setFileImage(`${data['image']}`, 'setting')
 
 			} else {

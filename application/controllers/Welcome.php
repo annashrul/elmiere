@@ -28,7 +28,25 @@ class Welcome extends CI_Controller {
 
 		$data['slider'] = $this->M_crud->read_data('slider','*');
 		$data['about'] = $this->M_crud->read_data('about','*')[0];
+		$data['service'] = $this->M_crud->read_data('service','*');
 		$data['gallery'] = $this->M_crud->read_data('v_gallery','*',"name='None'");
+		$portofolio=[];
+		foreach ($this->M_crud->read_data('client','*',"name!='None'") as $row){
+			$gallery =  [];
+			$resultGallery=$this->M_crud->read_data('gallery','*',"id_client='".$row['id']."'");
+			if(count($resultGallery) > 0){
+				foreach ($resultGallery as $val){
+					if($val['id_client'] == $row['id']){
+						$gallery[] =  $val['image'];
+					}
+				}
+				$row['gallery'] = $gallery;
+				$portofolio[]=$row;
+			}
+		}
+		$data['portofolio'] = $portofolio;
+//		echo "<pre/>";
+//		var_dump($portofolio);die();
 		$data['pages'] = 'frontoffice/home';
 		$this->load->view('frontoffice/index', $data);
 	}
@@ -58,6 +76,13 @@ class Welcome extends CI_Controller {
 		$data['client'] = $this->M_crud->read_data('v_gallery','*',"slug!='$slug' and name!='None'",null,'name');
 //		echo "<pre/>";
 //		var_dump($data['client']);die();
+		$this->load->view('frontoffice/index', $data);
+	}
+	public function gallery(){
+		$data['pages'] = 'frontoffice/gallery';
+		$data['gallery'] = $this->M_crud->read_data('v_gallery','*',"name='None'");
+//		echo "<pre/>";
+//		var_dump($data);die();
 		$this->load->view('frontoffice/index', $data);
 	}
 

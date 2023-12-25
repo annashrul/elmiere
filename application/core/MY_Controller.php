@@ -16,7 +16,7 @@ class MY_Controller extends CI_Controller
         $this->sessionId= $this->session->id;
         if($this->sessionId==null||$this->sessionId==""){redirect("backoffice/auth/logout");}
 
-        $this->limit    = 5;
+        $this->limit    = 10;
         $this->segment  = 5;
 
         $this->url              = base_url();

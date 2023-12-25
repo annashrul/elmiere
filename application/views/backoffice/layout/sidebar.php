@@ -26,7 +26,7 @@
 //		var_dump($uriChild);
 //		die();
 		$menu = [
-				['icon' => 'bx-chart', 'title' => 'Dashboard','controller'=>'dashboard', 'child' => []],
+				['icon' => 'bx-chart', 'title' => 'Service','controller'=>'service', 'child' => []],
 				['icon' => 'bx-body', 'title' => 'Client','controller'=>'client', 'child' => []],
 				['icon' => 'bx-star', 'title' => 'Testimoni','controller'=>'testimoni', 'child' => []],
 				['icon' => 'bx-images', 'title' => 'Gallery','controller'=>'gallery', 'child' => []],

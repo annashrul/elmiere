@@ -1,4 +1,4 @@
-var localCache = {
+const localCache = {
     data: {},
     remove  : (url) => delete localCache.data[url],
     exist   : (url) => localCache.data.hasOwnProperty(url) && localCache.data[url] !== null,
@@ -11,8 +11,8 @@ var localCache = {
 };
 
 function validateDeleteHtml(url,id,any,callback){
-    var currentPage = attrId(strActiveRows).val();
-    var countPerPage= toInt(attrId(strCountPerPage).val());
+    let currentPage = attrId(strActiveRows).val();
+    let countPerPage= toInt(attrId(strCountPerPage).val());
     deleteData(url,id,()=>{
 		callback(1,false)
         // if(countPerPage > 1 && any !== '')callback(currentPage,false);
@@ -23,9 +23,9 @@ function validateDeleteHtml(url,id,any,callback){
 }
 
 function validateSaveHmtl(title,any,param,callback){
-    var totalRows=isNumber(attrId(strTotalRows),1);
-    var searchName=title.toLowerCase().includes(any.toLowerCase());
-    var currentPage=isNumber(attrId(strActiveRows),1);
+    let totalRows=isNumber(attrId(strTotalRows),1);
+    let searchName=title.toLowerCase().includes(any.toLowerCase());
+    let currentPage=isNumber(attrId(strActiveRows),1);
     if(param===strEdit){
         if(totalRows > 1 && !searchName) callback(currentPage,searchName)
         if(totalRows > 1 && searchName) callback(currentPage,searchName)
@@ -38,27 +38,31 @@ function validateSaveHmtl(title,any,param,callback){
 
 }
 
+function uriSegment(url){
+    let extractUrl=url.split("/");
+    return {
+        folderController:isLocal ? extractUrl[5] :extractUrl[3],
+        controller:isLocal ?extractUrl[6] :extractUrl[4],
+        method:isLocal ?extractUrl[7] :extractUrl[5],
+    }
+
+}
+
 function ajaxData(url, req, callback, isCache=true) {
     NProgress.configure({showSpinner: true});
     setButtonAction(false);
     if(!handleIsEmpty(req)) req=null;
     if(!handleIsEmpty(isCache)) isCache=true;
-    var page=pageActiveName;
-    var uri=url.split("/")[8];
-	console.log("uri 8",url.split("/"))
-    let uriGetAll=uri;
-    if(uri===undefined) uri = url.split("/")[7];
-	let activePageSetModal =  url.split("/")[5];
-	if(url.split("/")[6]!=='edit'){
-		activePageSetModal = url.split("/")[6];
-	}
-	console.log('activePageSetModal',activePageSetModal)
-	var attrParam=attrId("param");
-    var attrModalTitle=attrClass("modal-title");
-    var attrInfoPagin=attrId(`notedPagination${page}`);
-    var attrResultContent=attrId(`result-content-${page}`);
+    let page=pageActiveName;
 
-	console.log("url",url)
+    const {folderController,controller,method} = uriSegment(url);
+    console.log()
+	let attrParam=attrId("param");
+    let attrModalTitle=attrClass("modal-title");
+    let attrInfoPagin=attrId(`notedPagination${page}`);
+    let attrResultContent=attrId(`result-content-${page}`);
+    let activePageSetModal =  folderController;
+	if(controller!=='edit')activePageSetModal = controller;
 
     $.ajax({
         url: url,
@@ -66,24 +70,19 @@ function ajaxData(url, req, callback, isCache=true) {
         dataType:'JSON',
         data: req,
         beforeSend: ()=>{
-            if(uri==="simpan")setButtonAction(true);
+            if(method==="simpan")setButtonAction(true);
             else NProgress.start();
-            var getJson=localCache.get(url);
+            let getJson=localCache.get(url);
 
-            if (uri!=="edit"&&isCache&&localCache.exist(url)) {
+            if (method!=="edit"&&isCache&&localCache.exist(url)) {
                 NProgress.done();
                 NProgress.remove();
-                var segment7=uriGetAll;
-                if(segment7===undefined) segment7 = url.split("/")[5];
-                if(url.split("/")[7]==='getAll'){
-
-                }
-                setSelectTemplate(getJson.responseJSON,segment7);
+                setSelectTemplate(getJson.responseJSON,method===undefined?folderController:method);
                 attrInfoPagin.html("Menampilkan Total "+getJson.responseJSON.no+" Dari "+getJson.responseJSON.totalRows+" Data")
                 attrResultContent.html(getJson.responseJSON.result);
-                var totalRows=parseInt(getJson.responseJSON.totalRows,10);
-                var lastRows=parseInt(getJson.responseJSON.lastRows,10);
-                var activeRows=parseInt(getJson.responseJSON.currentPages,10);
+                let totalRows=parseInt(getJson.responseJSON.totalRows,10);
+                let lastRows=parseInt(getJson.responseJSON.lastRows,10);
+                let activeRows=parseInt(getJson.responseJSON.currentPages,10);
                 setIsActivePaginationTable(totalRows,lastRows,activeRows,page)
                 scrollToBottom();
                 return false;
@@ -91,17 +90,17 @@ function ajaxData(url, req, callback, isCache=true) {
             return true;
         },
         complete: (jqXHR, textStatus)=>{
-            if(uri==="simpan") setButtonAction(false);
+            if(method==="simpan") setButtonAction(false);
             localCache.set(url, jqXHR, function(res){});
             NProgress.done();
             NProgress.remove();
         },
         success: (res)=>{
-            if(uri==='read'){
+            if(method==='read'){
                 setIsActivePaginationTable(res.totalRows,res.lastRows,res.currentPages,page)
                 attrInfoPagin.html("Menampilkan Total "+res.no+" Dari "+res.totalRows+" Data")
             }
-	        if(uri==='edit'){
+	        if(method==='edit'){
 		        attrId(`${strModal}${activePageSetModal}`).modal(strShow);
 		        attrParam.val("edit");
 		        attrModalTitle.text("Ubah "+ucWords(activePageSetModal))
@@ -123,20 +122,18 @@ function ajaxView(url, req, callback, isUrl,isCache=true){
     // if(!handleIsEmpty(isCache)) isCache=true;
 	// console.log(window.location)
     // var baseUrlAjax=isUrl?base_url + url:url;
-	console.log(isUrl,isUrl?url:window.location+url)
 	// console.log(isUrl,window.location+url)
     $.ajax({
         url: isUrl?url:window.location+url,
         type: "POST",
         data: req,
         beforeSend: ()=> {
-	        // $('body').append('<div class="first-loader"><img src="'+spin+'"></div>');
             NProgress.start();
             if (localCache.exist( window.location+url)) {
                 timeOut(() => handleErroImage())
                 NProgress.done();
                 NProgress.remove();
-                var getJson=localCache.get( window.location+url);
+                let getJson=localCache.get( window.location+url);
                 attrId("result-content").html(getJson.responseText);
                 return false;
             }
@@ -169,7 +166,7 @@ function ajaxFile(url, req, callback){
 		processData: false,
 		beforeSend: ()=> {
 			NProgress.start();
-			var checkSave=url.toLowerCase().includes("simpan".toLowerCase());
+			let checkSave=url.toLowerCase().includes("simpan".toLowerCase());
 			if(checkSave){
 				localCache.remove(url.replaceAll("simpan","getAll"));
 			}
@@ -216,7 +213,7 @@ function deleteData(url,id,callback) {
 function handleErrorRequest(jqXHR, exception, thrownError){
     NProgress.done();
     NProgress.remove();
-    var msg = '';
+    let msg = '';
     if (jqXHR.status === 0) {
         msg = 'Tidak ada koneksi.\n Periksa jaringan.';
     } else if (jqXHR.status === 404) {

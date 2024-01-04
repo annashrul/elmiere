@@ -73,12 +73,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+
+$isLocal=$_SERVER['HTTP_HOST']=='localhost';
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'db_elmiere',
+	'username' => $isLocal?'root':'elmf5387_compro',
+	'password' => $isLocal?'':')VNnS;xL@h2#',
+	'database' => $isLocal?'db_elmiere':'elmf5387_compro',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

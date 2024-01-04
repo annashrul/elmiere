@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 20, 2023 at 07:29 PM
+-- Generation Time: Jan 02, 2024 at 04:23 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `about` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `caption` varchar(200) NOT NULL,
+  `caption` text NOT NULL,
   `image` varchar(100) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -40,7 +40,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `title`, `caption`, `image`, `created_at`) VALUES
-(1, 'Photography is our passion. Whenever we get time, We click. Photography is a very important part of ', 'Photography is like a moment, an instant. You need a half-second to get photo. So it\'s good capture people when they are themselves.I became passionate about nature filmmaking when I graduated from UC', 'assets/backoffice/uploads/images/about/b0134bb53e8e72a5dbf7a1a18e502a6b.jpg', '2023-12-20 17:21:17');
+(1, 'Photography is like a moment, an instant. You need passionate about design filmmaking when I graduat', 'Photography is like a moment, an instant. You need a half-second to get photo. So it\'s good capture people when they are themselves.I became passionate about nature filmmaking when I graduated from UC.Photography is like a moment, an instant. You need a half-second to get photo. So it\'s good capture people when they are themselves.I became passionate about nature filmmaking when I graduated from UC', 'assets/backoffice/uploads/images/about/5c6e94fcc4a827ef8ba20da1be7f29d4.jpg', '2023-12-25 16:28:24');
 
 -- --------------------------------------------------------
 
@@ -53,16 +53,21 @@ CREATE TABLE `client` (
   `name` varchar(30) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `image` text NOT NULL,
-  `youtube` text NOT NULL
+  `youtube` text NOT NULL,
+  `slug` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`id`, `name`, `created_at`, `image`, `youtube`) VALUES
-(1, 'Nabati', '2023-12-20 16:26:55', 'https://upload.wikimedia.org/wikipedia/commons/8/88/Nabati_logo.svg', 'https://www.youtube.com/embed/gDUzaANQ01A?si=bBZrBEZfPZTc-KUH'),
-(3, 'None', '2023-12-20 14:52:02', '', '');
+INSERT INTO `client` (`id`, `name`, `created_at`, `image`, `youtube`, `slug`) VALUES
+(1, 'Nabati', '2023-12-24 17:15:36', 'https://upload.wikimedia.org/wikipedia/commons/8/88/Nabati_logo.svg', 'kPmjOWYjG-M?si=ctEmeaz8NMUyAJJK', 'nabati'),
+(3, 'None', '2023-12-24 16:33:11', '', '', 'none'),
+(4, 'Annashrul Yusuf & Syifa', '2023-12-24 16:33:08', '', '', 'annashrul-yusuf-and-syifa'),
+(5, 'BCL & Ariel', '2023-12-24 17:30:32', '', '8JhJcRmF_Sk?si=A0KET1QvZc-EjKiQ', 'bcl-and-ariel'),
+(6, 'Raffi Ahmad & Nagita', '2023-12-24 16:32:51', '', '', 'raffi-ahmad-and-nagita'),
+(7, 'Bambang & Nisa', '2023-12-25 15:12:07', '', '', 'bambang-and-nisa');
 
 -- --------------------------------------------------------
 
@@ -83,10 +88,38 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `image`, `caption`, `created_at`, `id_client`) VALUES
-(4, 'assets/backoffice/uploads/images/gallery/dbbd2bf01b154fae83da6e1dbb054b3d.jpg', 'Gunung Burangrang', '2023-12-20 14:43:28', 1),
-(6, 'assets/backoffice/uploads/images/gallery/79a11fd8c7f8f4032ed505b01f96123d.jpg', 'Tangkuban Parahu', '2023-12-20 14:49:08', 1),
+(4, 'assets/backoffice/uploads/images/gallery/36b698242e38576c78a0b55989cd30e6.jpg', 'Gunung Burangrang', '2023-12-24 15:33:05', 1),
+(6, 'assets/backoffice/uploads/images/gallery/000944af155ece93e709425ea4fd5227.jpg', 'Tangkuban Parahu', '2023-12-24 15:32:58', 1),
 (7, 'assets/backoffice/uploads/images/gallery/bc1a8e75aec12d800b0a6c948338a05e.jpg', 'Bromo 1', '2023-12-20 14:53:36', 3),
-(8, 'assets/backoffice/uploads/images/gallery/f02f75507babebe46b30f7d1c8b38e38.jpg', 'Bromo 2', '2023-12-20 14:53:48', 3);
+(8, 'assets/backoffice/uploads/images/gallery/f02f75507babebe46b30f7d1c8b38e38.jpg', 'Bromo 2', '2023-12-20 14:53:48', 3),
+(9, 'assets/backoffice/uploads/images/gallery/b995327fdb185f10984b5b098cedd36e.jpg', 'Laut', '2023-12-24 15:37:56', 4),
+(10, 'assets/backoffice/uploads/images/gallery/9aa2bb5a0c93b82814029f3769ccfb75.jpg', 'PREWEED', '2023-12-24 15:33:22', 1),
+(11, 'assets/backoffice/uploads/images/gallery/2a153d462e47d5d0662ae794319415e2.jpg', 'PREWEED', '2023-12-24 15:38:10', 4),
+(12, 'assets/backoffice/uploads/images/gallery/1f50b6f66657e02c72c19a02cee13203.jpg', 'PREWEED', '2023-12-24 15:38:23', 4),
+(13, 'assets/backoffice/uploads/images/gallery/f96604ea9d6b3fb99684a27f089ad476.jpg', 'BEAUTY PHOTOGRAPHY', '2023-12-24 15:40:00', 5),
+(14, 'assets/backoffice/uploads/images/gallery/a86d6d3a9531de9d579f54c2c4d8d742.jpg', 'BEAUTY PHOTOGRAPHY', '2023-12-24 15:40:24', 5),
+(15, 'assets/backoffice/uploads/images/gallery/79b51b99dd39c0176d81f068b647f00c.jpg', 'BEAUTY PHOTOGRAPHY', '2023-12-24 15:40:34', 5),
+(16, 'assets/backoffice/uploads/images/gallery/6c451c713ef2faec11cf7c667dc4bb49.jpg', 'BEAUTY', '2023-12-24 15:41:59', 1),
+(17, 'assets/backoffice/uploads/images/gallery/811eaed8cb997ce5e9e5bf0cb7deae5d.jpg', 'BEAUTY', '2023-12-24 16:17:18', 5),
+(18, 'assets/backoffice/uploads/images/gallery/76d848d65a012e0f5367d982455eb3ae.jpg', 'BEAUTY', '2023-12-24 16:17:31', 5),
+(19, 'assets/backoffice/uploads/images/gallery/c56c3e94f440a3e7ca62f6633b2b1471.jpg', 'BEAUTY', '2023-12-24 16:17:39', 5),
+(20, 'assets/backoffice/uploads/images/gallery/c75827783a568475252e462fbe4e1fcb.jpg', 'BEAUTY', '2023-12-24 16:19:21', 5),
+(21, 'assets/backoffice/uploads/images/gallery/d69edc0baa987ba28474d9b03e4bd864.jpg', 'BEAUTY', '2023-12-24 16:19:31', 5),
+(22, 'assets/backoffice/uploads/images/gallery/b73fd0cece52b7d10386edb2c329ecf6.jpg', 'BEAUTY', '2023-12-24 16:19:40', 5),
+(23, 'assets/backoffice/uploads/images/gallery/c55ae52e3c5dca3f6842ee3da7360ff6.jpg', 'top shoot', '2023-12-24 18:10:01', 3),
+(24, 'assets/backoffice/uploads/images/gallery/863f72207073dd374f0e91f29e0429be.jpg', 'top shoot', '2023-12-24 18:10:21', 3),
+(25, 'assets/backoffice/uploads/images/gallery/a21350ae747bb1f969421f257bf6ba53.jpg', 'top shoot', '2023-12-24 18:10:30', 3),
+(26, 'assets/backoffice/uploads/images/gallery/bd74dedfbe31f6d1d09aa1bd8dcc5ad7.jpg', 'top shoot', '2023-12-24 18:10:39', 3),
+(27, 'assets/backoffice/uploads/images/gallery/d9360c9fddd0f5480d93df191b2701ea.jpg', 'top shoot', '2023-12-24 18:10:50', 3),
+(28, 'assets/backoffice/uploads/images/gallery/a193ee4745030d961df1c1856a7d612d.jpg', 'top shoot', '2023-12-24 18:11:04', 3),
+(29, 'assets/backoffice/uploads/images/gallery/a3a565b7b78b6ba19ec24be5dbb23355.jpg', 'top shoot', '2023-12-24 18:12:44', 3),
+(30, 'assets/backoffice/uploads/images/gallery/cb503409a02225258784444d9be569a8.jpg', 'top shoot', '2023-12-24 18:12:52', 3),
+(31, 'assets/backoffice/uploads/images/gallery/826a2ca1ba9f491b59adb738a4cb56bf.jpg', 'top shoot', '2023-12-24 18:16:03', 3),
+(32, 'assets/backoffice/uploads/images/gallery/2816ec5e632587c3da7086dd6db92273.jpg', 'top Shoot', '2023-12-24 18:20:42', 3),
+(33, 'assets/backoffice/uploads/images/gallery/9894c8a2db3428ced5b78dc4a9b26f66.jpg', 'Top Shoot', '2023-12-24 18:21:06', 3),
+(34, 'assets/backoffice/uploads/images/gallery/3687c2b78b182e0293fb5b8d1e9dd0a5.jpg', 'BEST PHOTO', '2023-12-25 15:12:25', 7),
+(35, 'assets/backoffice/uploads/images/gallery/5c080f611ca19193405924ec1e850321.jpg', 'BEST PHOTO', '2023-12-25 15:12:39', 7),
+(36, 'assets/backoffice/uploads/images/gallery/ee86453703b44ae0ad4810bec7a06094.jpg', 'BEST PHOTO', '2023-12-25 15:12:50', 7);
 
 -- --------------------------------------------------------
 
@@ -107,11 +140,13 @@ CREATE TABLE `partner` (
 --
 
 INSERT INTO `partner` (`id`, `name`, `image`, `link`, `created_at`) VALUES
-(1, 'Nabati', 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Nabati_brand_logo.png', 'https://nabati.com', '2023-12-20 15:13:35'),
-(3, 'Astra', 'https://companieslogo.com/img/orig/AALI.JK-0b7df4bf.png?t=1651135388', 'https://astra.com', '2023-12-20 15:49:00'),
-(4, 'MCD', 'https://upload.wikimedia.org/wikipedia/commons/3/32/McDonald\'s_1968_logo.png', 'https://mcd.com', '2023-12-20 15:55:41'),
-(5, 'KFC', 'https://pngimg.com/uploads/kfc/kfc_PNG53.png', 'https://kfc.com', '2023-12-20 15:56:46'),
-(6, 'Yamaha', 'https://static.vecteezy.com/system/resources/previews/020/975/541/original/yamaha-logo-yamaha-icon-transparent-free-png.png', 'https://yamaha.com', '2023-12-20 15:59:09');
+(1, 'Nabati', 'https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/slider/instagram/insta-7.jpg', 'https://nabati.com', '2023-12-24 17:49:40'),
+(3, 'Astra', 'https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/slider/instagram/insta-6.jpg', 'https://astra.com', '2023-12-24 17:49:30'),
+(4, 'MCD', 'https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/slider/instagram/insta-5.jpg', 'https://mcd.com', '2023-12-24 17:49:21'),
+(5, 'KFC', 'https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/slider/instagram/insta-4.jpg', 'https://kfc.com', '2023-12-24 17:49:11'),
+(6, 'Yamaha', 'https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/slider/instagram/insta-1.jpg', 'https://yamaha.com', '2023-12-24 17:46:38'),
+(7, 'BCL & ARIEL', 'https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/slider/instagram/insta-2.jpg', '', '2023-12-24 17:47:32'),
+(8, 'GONZALEZ', 'https://demo.voidcoders.com/htmldemo/potoliaV2/main-files/assets/img/slider/instagram/insta-3.jpg', '', '2023-12-24 17:48:19');
 
 -- --------------------------------------------------------
 
@@ -155,6 +190,31 @@ INSERT INTO `portofolio` (`id`, `title`, `caption`, `image`, `created_at`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `service`
+--
+
+CREATE TABLE `service` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `caption` text NOT NULL,
+  `icon` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `service`
+--
+
+INSERT INTO `service` (`id`, `title`, `caption`, `icon`) VALUES
+(1, 'REGULAR PHOTOGRAPHY', 'Photography is way of feeling of touching of loving. What you have caught on film captu red forever rememb little things. Photography is like a moment, an instant. You need a half second to get the photo. ', 'flaticon-1'),
+(2, 'AWESOME PHOTOGRAPHY', ' Photography is way of feeling of touching of loving. What you have caught on film captu red forever rememb little things. Photography is like a moment, an instant. You need a half second to get the photo.', 'flaticon-16'),
+(3, 'LANDSCAPE', ' Photography is way of feeling of touching of loving. What you have caught on film captu red forever rememb little things. Photography is like a moment, an instant. You need a half second to get the photo.', 'flaticon-47'),
+(4, 'VIDEOGRAPHY', ' Photography is way of feeling of touching of loving. What you have caught on film captu red forever rememb little things. Photography is like a moment, an instant. You need a half second to get the photo.', 'flaticon-11'),
+(5, 'DOCUMENTRY MAKING', ' Photography is way of feeling of touching of loving. What you have caught on film captu red forever rememb little things. Photography is like a moment, an instant. You need a half second to get the photo.', 'flaticon-37'),
+(6, 'FREE IMAGE SERVICE update', ' Photography is way of feeling of touching of loving. What you have caught on film captu red forever rememb little things. Photography is like a moment, an instant. You need a half second to get the photo.', 'flaticon-28');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `setting`
 --
 
@@ -168,15 +228,16 @@ CREATE TABLE `setting` (
   `twitter` text NOT NULL,
   `behance` text NOT NULL,
   `pinterest` text NOT NULL,
-  `linkedin` text NOT NULL
+  `linkedin` text NOT NULL,
+  `whatsapp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `setting`
 --
 
-INSERT INTO `setting` (`id`, `name`, `image`, `created_at`, `facebook`, `instagram`, `twitter`, `behance`, `pinterest`, `linkedin`) VALUES
-(1, 'Elmiere', 'assets/backoffice/uploads/images/setting/e5740f5496351aeead5b56d6c3552f6f.png', '2023-12-20 18:26:47', 'https://facebook.com/elmiere', 'https://instagram.com/elmiere', 'https://twitter.com/elmiere', 'https://behance.com/elmiere', 'https://pinterest.com/elmiere', 'https://linkedin.com/elmiere');
+INSERT INTO `setting` (`id`, `name`, `image`, `created_at`, `facebook`, `instagram`, `twitter`, `behance`, `pinterest`, `linkedin`, `whatsapp`) VALUES
+(1, 'Elmiere UPDATE', 'assets/backoffice/uploads/images/setting/246845df8d9caf2e1c38d08be282a7bf.png', '2024-01-02 14:33:29', 'https://facebook.com/elmiere', 'https://instagram.com/elmiere', 'https://twitter.com/elmiere', 'https://behance.com/elmiere', 'https://pinterest.com/elmiere', 'https://linkedin.com/elmiere', '+6281223165037');
 
 -- --------------------------------------------------------
 
@@ -270,6 +331,8 @@ CREATE TABLE `v_gallery` (
 ,`created_at` timestamp
 ,`id_client` int(11)
 ,`name` varchar(30)
+,`slug` varchar(100)
+,`youtube` text
 );
 
 -- --------------------------------------------------------
@@ -279,7 +342,7 @@ CREATE TABLE `v_gallery` (
 --
 DROP TABLE IF EXISTS `v_gallery`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_gallery`  AS SELECT `g`.`id` AS `id`, `g`.`image` AS `image`, `g`.`caption` AS `caption`, `g`.`created_at` AS `created_at`, `g`.`id_client` AS `id_client`, `c`.`name` AS `name` FROM (`gallery` `g` join `client` `c` on(`c`.`id` = `g`.`id_client`))  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_gallery`  AS SELECT `g`.`id` AS `id`, `g`.`image` AS `image`, `g`.`caption` AS `caption`, `g`.`created_at` AS `created_at`, `g`.`id_client` AS `id_client`, `c`.`name` AS `name`, `c`.`slug` AS `slug`, `c`.`youtube` AS `youtube` FROM (`gallery` `g` join `client` `c` on(`c`.`id` = `g`.`id_client`))  ;
 
 --
 -- Indexes for dumped tables
@@ -313,6 +376,12 @@ ALTER TABLE `partner`
 -- Indexes for table `portofolio`
 --
 ALTER TABLE `portofolio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `service`
+--
+ALTER TABLE `service`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -359,25 +428,31 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `partner`
 --
 ALTER TABLE `partner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `portofolio`
 --
 ALTER TABLE `portofolio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `service`
+--
+ALTER TABLE `service`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `setting`

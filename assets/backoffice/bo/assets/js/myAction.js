@@ -45,12 +45,14 @@ function ajaxData(url, req, callback, isCache=true) {
     if(!handleIsEmpty(isCache)) isCache=true;
     var page=pageActiveName;
     var uri=url.split("/")[8];
+	console.log("uri 8",url.split("/"))
     let uriGetAll=uri;
     if(uri===undefined) uri = url.split("/")[7];
 	let activePageSetModal =  url.split("/")[5];
 	if(url.split("/")[6]!=='edit'){
 		activePageSetModal = url.split("/")[6];
 	}
+	console.log('activePageSetModal',activePageSetModal)
 	var attrParam=attrId("param");
     var attrModalTitle=attrClass("modal-title");
     var attrInfoPagin=attrId(`notedPagination${page}`);

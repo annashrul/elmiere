@@ -7,10 +7,10 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>TRIPISIA - MASUK BACKOFFICE</title>
+    <title>ELMIERE - MASUK BACKOFFICE</title>
 
-    <meta name="description" content="TRIPISIA" />
-    <meta name="keywords" content="TRIPISIA">
+    <meta name="description" content="ELMIERE" />
+    <meta name="keywords" content="ELMIERE">
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/">
 
@@ -131,7 +131,7 @@
             <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
                 <div class="w-px-400 mx-auto">
 
-                    <h4 class="mb-2">Masuk Backoffice Tripisia 👋</h4>
+                    <h4 class="mb-2">Masuk Backoffice Elmiere 👋</h4>
                     <form id="form_input">
                         <div class="mb-3">
                             <label class="form-label">Username</label>

@@ -276,10 +276,10 @@
 							<h3 class='wow fadeInUp' data-wow-delay='.25s'>Photography Is Great</h3>
 						</div>
 						<p class='wow fadeInUp' data-wow-delay='.35s'><?=$about['title']?></p>
-						<ul>
-							<li class="wow fadeInUp" data-wow-delay=".45s"><?=$about['caption']?></li>
-
-						</ul>
+<!--						<ul>-->
+<!--							<li class="wow fadeInUp" data-wow-delay=".45s">--><?//=$about['caption']?><!--</li>-->
+<!---->
+<!--						</ul>-->
 						<p class="wow fadeInUp" data-wow-delay=".75s">You do have a modicum of creative freedom as an
 							actor, but you're still very
 							much a cipher for other people's art. Photography gives you the opportunity

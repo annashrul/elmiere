@@ -1,14 +1,14 @@
-<section class='innerpage-titlev3'>
-	<div class='container'>
-		<div class='row'>
-			<div class='col-md-12'>
-				<div class='ipt-text'>
-					<h3><?=$detail[0]['name']?></h3>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<!--<section class='innerpage-titlev3'>-->
+<!--	<div class='container'>-->
+<!--		<div class='row'>-->
+<!--			<div class='col-md-12'>-->
+<!--				<div class='ipt-text'>-->
+<!--					<h3>--><?//=$detail[0]['name']?><!--</h3>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</section>-->
 
 
 <section class='portfolio-area bgDark section-padding'>
@@ -17,7 +17,7 @@
 			<div class='col-md-12'>
 				<div class='section-titleV1'>
 					<p>Our Recent Works</p>
-					<h3>Our Portfolio</h3>
+					<h3><?=$detail[0]['name']?></h3>
 				</div>
 			</div>
 		</div>

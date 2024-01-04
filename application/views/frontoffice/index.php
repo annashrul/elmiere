@@ -11,7 +11,7 @@ $setting = $this->M_crud->read_data('setting', '*')[0];
 <head>
 
     <meta charset='utf-8'>
-    <title>Elmiere - Multipurpose Photography HTML Template</title>
+    <title>Elmiere</title>
     <meta name='description' content>
     <meta name='author' content>
     <meta name='keywords' content>

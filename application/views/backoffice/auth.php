@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style  customizer-hide" dir="ltr" data-theme="theme-default"
-    data-assets-path="<?=base_url().'assets/backoffice/bo'?>/assets/" data-template="vertical-menu-template">
+<html lang="en" class="light-style  customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="<?=base_url().'assets/backoffice/bo'?>/assets/" data-template="vertical-menu-template">
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title>ELMIERE - MASUK BACKOFFICE</title>
 
     <meta name="description" content="ELMIERE" />
     <meta name="keywords" content="ELMIERE">
     <!-- Canonical SEO -->
-    <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/">
+    <link rel="canonical" href="https://elmierephoto.com/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?=base_url().'assets/backoffice/bo'?>/assets/img/favicon/favicon.ico" />
@@ -28,19 +26,15 @@
     <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/fonts/flag-icons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/css/rtl/core.css"
-        class="template-customizer-core-css" />
-    <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/css/rtl/theme-default.css"
-        class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet"
-        href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/libs/typeahead-js/typeahead.css" />
     <!-- Vendor -->
-    <link rel="stylesheet"
-        href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
+    <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
     <!-- Page -->
     <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/css/pages/page-auth.css">
     <link rel="stylesheet" href="<?=base_url().'assets/backoffice/bo'?>/assets/vendor/libs/toastr/toastr.css" />
@@ -122,10 +116,7 @@
         <div class="authentication-inner row m-0">
             <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
                 <div class="w-100 d-flex justify-content-center">
-                    <img src="<?=base_url().'assets/backoffice/boy-with-rocket-light.png'?>"
-                        class="img-fluid" alt="Login image" width="500"
-                        data-app-dark-img="<?=base_url().'assets/boy-with-rocket-dark.png'?>"
-                        data-app-light-img="<?=base_url().'assets/boy-with-rocket-light.png'?>">
+                    <img src="<?=base_url().'assets/backoffice/boy-with-rocket-light.png'?>" class="img-fluid" alt="Login image" width="500" data-app-dark-img="<?=base_url().'assets/boy-with-rocket-dark.png'?>" data-app-light-img="<?=base_url().'assets/boy-with-rocket-light.png'?>">
                 </div>
             </div>
             <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
@@ -135,14 +126,12 @@
                     <form id="form_input">
                         <div class="mb-3">
                             <label class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"
-                                placeholder="Enter your username" autofocus>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" autofocus>
                             <small style="color: #ff3e1d" id="err-username"></small>
                         </div>
                         <div class="mb-4">
                             <label class="form-label" for="password">Password</label>
-                            <input type="password" id="password" class="form-control" name="password"
-                                placeholder="Enter your password" />
+                            <input type="password" id="password" class="form-control" name="password" placeholder="Enter your password" />
                             <small style="color: #ff3e1d" id="err-password"></small>
                         </div>
                         <button class="btn btn-primary btn-loading w-100" type="submit" id="btnSubmit"> Masuk </button>

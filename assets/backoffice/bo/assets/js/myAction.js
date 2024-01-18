@@ -56,7 +56,6 @@ function ajaxData(url, req, callback, isCache=true) {
     let page=pageActiveName;
 
     const {folderController,controller,method} = uriSegment(url);
-    console.log()
 	let attrParam=attrId("param");
     let attrModalTitle=attrClass("modal-title");
     let attrInfoPagin=attrId(`notedPagination${page}`);

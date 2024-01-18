@@ -1,3 +1,7 @@
+<?php
+$setting = $this->M_crud->read_data('setting', '*')[0];
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="light-style  customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="<?=base_url().'assets/backoffice/bo'?>/assets/" data-template="vertical-menu-template">
 
@@ -5,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>ELMIERE - MASUK BACKOFFICE</title>
+    <title><?=$setting['name']?> - MASUK BACKOFFICE</title>
 
     <meta name="description" content="ELMIERE" />
     <meta name="keywords" content="ELMIERE">
@@ -13,7 +17,7 @@
     <link rel="canonical" href="https://elmierephoto.com/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?=base_url().'assets/backoffice/bo'?>/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?=base_url().$setting['image']?>" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

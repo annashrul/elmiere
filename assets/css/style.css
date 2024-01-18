@@ -35,7 +35,7 @@
 /*  Theme default CSS
 /*----------------------------------------*/
 
-.portofolio-carousel .owl-nav.disabled{
+tofolio-carousel .owl-nav.disabled{
 	display: block !important;
 }
 .portofolio-carousel .owl-nav {
@@ -102,6 +102,7 @@ div#preloader {
   z-index: 999; }
 
 header.navbar-fixed-top {
+	background-color: white !important;
   animation-duration: 0.8s;
   animation-name: fadeInDown;
   animation-timing-function: ease-in-out;
@@ -436,23 +437,25 @@ i[class^="flaticon-"]:before {
   .section-titleV1 p {
     font-size: 18px;
     letter-spacing: 0px;
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     font-weight: 600;
     line-height: 24px; }
   .section-titleV1 h3 {
     font-size: 36px;
     letter-spacing: 0px;
-    color: #fff;
+    color: black;
     line-height: 44px;
     font-weight: 500;
     margin: 10px auto;
     text-transform: uppercase; }
 
 .bgDark .section-titleV1 p {
-  color: #fff; }
+  color: black !important;
+}
 .bgDark .section-titleV1 h3 {
-  color: #fff; }
+  color: black !important;
+}
 
 .section-titleV2 {
   position: relative;
@@ -542,12 +545,12 @@ i[class^="flaticon-"]:before {
   color: #fff; }
 
 .dark-bg .section-text p {
-  color: #fff; }
+  color: black; }
 
 .st-white .section-titleV1 h3 {
-  color: #fff; }
+  color: black }
 .st-white .section-titleV1 p {
-  color: #fff; }
+  color: black; }
 .st-white p {
   color: #fff; }
 
@@ -4461,7 +4464,7 @@ ul.ps10-list {
   padding-top: 40px; }
 
 .single-service .ss-icon i{
-	color:white !important;
+	color:black !important;
 }
 .single-service {
   position: relative;
@@ -4490,7 +4493,7 @@ ul.ps10-list {
     .single-service .ss-text h4 {
       font-size: 20px;
       letter-spacing: 0px;
-      color: #fff;
+      color: black;
       font-weight: 500;
       text-transform: uppercase;
       line-height: 30px;
@@ -4503,7 +4506,7 @@ ul.ps10-list {
     .single-service .ss-text p {
       font-size: 16px;
       letter-spacing: 0px;
-      color: #fff;
+      color: black;
       font-weight: 400;
       line-height: 24px;
       margin-bottom: 15px;
@@ -4696,16 +4699,16 @@ ul.ps10-list {
 .sspV3 {
   max-width: 380px;
   margin: 0 auto;
-  border-color: #424242;
+  border-color: #EEEEEE;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   .sspV3 .ss-icon {
-    border: 1px solid #43435b;
+    border: 1px solid #EEEEEE;
     border-radius: 5px;
-    background-color: transparent;
+    background-color: #EEEEEE;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -4952,7 +4955,7 @@ ul.ps10-list {
   .testimonial-area .section-titleV1 p {
     color: #fff; }
   .testimonial-area .section-titleV1 h3 {
-    color: #fff; }
+    color: black; }
 
 .testimonial-carouselV1 .owl-dots {
   display: none; }
@@ -5421,7 +5424,7 @@ ul.fotolia-blog-pagination {
   margin: 25px auto;
   max-width: 350px; }
   .sidebar-widget h4 {
-    color: #fff;
+    color: black;
     font-size: 24px;
     letter-spacing: 0px;
     line-height: 36px;
@@ -6700,7 +6703,7 @@ form.cf button {
 /*----------------------------------------*/
 .footer-area {
   position: relative;
-  background-color: #191e2c;
+  background-color: #EEEEEE;
   padding: 25px 0px 15px;
   text-align: center; }
 
@@ -6712,7 +6715,7 @@ form.cf button {
     font-size: 18px;
     line-height: 25px;
     letter-spacing: 0px;
-    color: #fff;
+    color: black;
     margin: 15px auto; }
 
 .footer-social {

@@ -60,8 +60,8 @@
 				<div class='sidebar-widget s-featured-post' style='margin:0 '>
 					<h4>Other Client</h4>
 					<?php foreach ($client as $row): ?>
-						<a class="client-elmiere" href="<?= base_url() . 'portofolio/' . $row['slug'] ?>"
-						   style="color:white;border:1px solid white;padding:5px"><?= $row['name'] ?></a>
+						<a class="client-elmiere" href="<?= base_url() . 'photos/' . $row['slug'] ?>"
+						   style="color:black;border:1px solid black;padding:5px"><?= $row['name'] ?></a>
 					<?php endforeach; ?>
 				</div>
 			</div>

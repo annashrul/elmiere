@@ -11,7 +11,7 @@ $setting = $this->M_crud->read_data('setting', '*')[0];
 <head>
 
     <meta charset='utf-8'>
-    <title>Elmiere</title>
+    <title><?=$setting['name']?></title>
     <meta name='description' content>
     <meta name='author' content>
     <meta name='keywords' content>
@@ -63,10 +63,21 @@ $setting = $this->M_crud->read_data('setting', '*')[0];
     <link rel='stylesheet' type='text/css' href='<?= $url ?>assets/revolution/css/navigation.css'>
 </head>
 
-<body class='dark-bg'>
-    <div id='preloader'></div>
+<style>
+	.voidmega-header{
 
-    <header class='header-area fotolia-header header_2'>
+		background-color: rgba(255,255,255,.3) !important;
+	}
+	.header-transparent-on .vmm-menu > ul > li > a, .header-opacity-on .vmm-menu > ul > li > a{
+		color:black;
+		font-weight:bold;
+	}
+
+</style>
+<body class=''>
+<!--    <div id='preloader'></div>-->
+
+    <header class='header-area fotolia-header header_2' style="">
         <div class='voidmega-header'>
             <div class='container'>
                 <div class='row'>
@@ -78,7 +89,7 @@ $setting = $this->M_crud->read_data('setting', '*')[0];
 
                                     <div class='logo' data-mobile-logo="<?= base_url() .
                                         $setting['image'] ?>" data-sticky-logo="<?= base_url() .$setting['image'] ?>">
-                                        <a href="<?= base_url() ?>"><img src="<?= base_url() .$setting['image'] ?>" alt='logo' /></a>
+                                        <a href="<?= base_url() ?>"><img src="<?= base_url() .$setting['image'] ?>" alt='logo' style="height: 80px" /></a>
                                     </div>
 
                                     <div class='burger-menu'>
@@ -98,19 +109,19 @@ $setting = $this->M_crud->read_data('setting', '*')[0];
                             </div>
                         </div>
                     </div>
-                    <div class='d-none col-xl-2 d-xl-block'>
-                        <div class='search-menu-btn'>
-                            <div class='searchV1-btn'>
-                                <div class='soc-btn search-open'>
-                                    <i class='fa fa-search'></i>
-                                </div>
-                                <div class='soc-btn search-close'>
-                                    <i class='fa fa-close'></i>
-                                </div>
-                            </div>
-                            <span class='menu2nd-btn'><i class='fa fa-bars fa-2x'></i></span>
-                        </div>
-                    </div>
+<!--                    <div class='d-none col-xl-2 d-xl-block'>-->
+<!--                        <div class='search-menu-btn'>-->
+<!--                            <div class='searchV1-btn'>-->
+<!--                                <div class='soc-btn search-open'>-->
+<!--                                    <i class='fa fa-search'></i>-->
+<!--                                </div>-->
+<!--                                <div class='soc-btn search-close'>-->
+<!--                                    <i class='fa fa-close'></i>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <span class='menu2nd-btn'><i class='fa fa-bars fa-2x'></i></span>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -147,7 +158,7 @@ $setting = $this->M_crud->read_data('setting', '*')[0];
         <div class="container">
             <div class="col-md-12">
                 <div class="footer-copyr-logo">
-                    <img src="<?= base_url() . $setting['image'] ?>" alt>
+                    <img src="<?= base_url() . $setting['image'] ?>" alt style="height: 100px">
                     <p>© 2019 All rights reserved by
                         <?= $setting['name'] ?>
                     </p>

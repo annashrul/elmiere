@@ -1,14 +1,14 @@
-<section class='innerpage-titlev3'>
-	<div class='container'>
-		<div class='row'>
-			<div class='col-md-12'>
-				<div class='ipt-text'>
-					<h3>Gallery Elmiere</h3>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<!--<section class='innerpage-titlev3'>-->
+<!--	<div class='container'>-->
+<!--		<div class='row'>-->
+<!--			<div class='col-md-12'>-->
+<!--				<div class='ipt-text'>-->
+<!--					<h3>Gallery Elmiere</h3>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</section>-->
 
 
 <section class='portfolio-area portfolio-page-content bgDark section-padding'>

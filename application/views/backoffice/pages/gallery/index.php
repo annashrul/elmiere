@@ -30,7 +30,6 @@ $this->load->view($this->generalHeader, $data) ?>
 					<div class='col-md-12'>
 						<div class='row'>
 							<?php $label = $this->fileUpload; ?>
-
 							<div class="col-md-12">
 								<label for="nameBackdrop" class="form-label"><?= getLabel($label) ?> </label>
 								<label class="error-file-upload"></label>

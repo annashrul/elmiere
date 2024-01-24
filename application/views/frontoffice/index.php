@@ -48,7 +48,7 @@ $setting = $this->M_crud->read_data('setting', '*')[0];
 
     <link rel='stylesheet' href='<?= $url ?>assets/css/style.css'>
 
-    <link rel='shortcut icon' type='image/png' href='<?= $url ?>assets/img/favicon.ico'>
+    <link rel='shortcut icon' type='image/png' href='<?= $url.$setting["image"] ?>'>
 
 
     <!--[if lt IE 9]>

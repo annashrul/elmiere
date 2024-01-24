@@ -22,13 +22,27 @@ $this->load->view($this->generalHeader, $data) ?>
 					</div>
 					<div class='col-md-12 mb-3'>
 						<?php $label = 'image'; ?>
-						<label for="nameBackdrop" class="form-label">Link <?= getLabel($label) ?></label>
+						<label for="nameBackdrop" class="form-label">Link Logo</label>
 						<input type="text" name="<?= $label ?>" id="<?= $label ?>" class="form-control">
 					</div>
 					<div class='col-md-12 mb-3'>
 						<?php $label = 'youtube'; ?>
 						<label for="nameBackdrop" class="form-label">Link <?= getLabel($label) ?></label>
 						<input type="text" name="<?= $label ?>" id="<?= $label ?>" class="form-control">
+					</div>
+					<div class='col-md-12'>
+						<div class='row'>
+							<?php $label = $this->fileUpload; ?>
+							<div class="col-md-9">
+								<label for="nameBackdrop" class="form-label"><?= getLabel($label) ?> </label>
+								<label class="error-file-upload"></label>
+							</div>
+							<div class='col-md-3'>
+								<button type='button' onclick='delImage()' class='btn btn-primary btn-xs' style='float: right; margin-left: 5px'><i class='bx bx-trash-alt'></i></button>
+								<button type='button' onclick='addImage()' class='btn btn-primary btn-xs' style='float: right;'><i class='bx bx-plus'></i></button>
+							</div>
+							<div class='row' id='wrapImg' style='max-height: 240px;overflow-y: scroll;'></div>
+						</div>
 					</div>
 
 				</div>
@@ -54,6 +68,34 @@ $this->load->view($this->generalHeader, $data) ?>
 	var resultContent = attrId(strResultContent);
 	var anyPage = attrId(`${strAny}${pages}`);
 	var no = 1;
+	var noImg=1;
+	var wrapImg     = attrId(strwrapImg);
+
+	modalForm.on(strShowModal, function () {
+		var resImg=tempFieldImage({no:1});
+		noImg=1;
+		wrapImg.html(resImg);
+		timeOut(function(){location.hash=`#${strFileUpload}_${noImg}`})
+	});
+	function addImage(){
+		noImg = noImg+1;
+		let resImg=tempFieldImage({no:noImg});
+		wrapImg.append(resImg);
+		timeOut(function(){location.hash=`#${strFileUpload}_${noImg}`})
+
+	}
+
+	function delImage() {
+		var isValid = paramForm.val() === strAdd ? 1 : 0;
+		if (noImg > isValid) {
+			$('#wrapInputImg_' + noImg).remove();
+			$('#wrapResultImg_' + noImg).remove();
+			noImg = noImg - 1;
+			timeOut(function () {
+				location.hash = `#${strFileUpload}_${noImg}`
+			})
+		}
+	}
 
 
 	$(document).ready(function () {

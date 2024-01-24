@@ -455,10 +455,10 @@ function tempFieldImage(data){
     let imgHtml = '';
 
     imgHtml+='<div class="col-9 col-xs-9 col-md-10 mb-1" id="wrapInputImg_'+data.no+'">';
-    imgHtml+='<input class="form-control" type="file" name="'+strFileUpload+'[]" id="'+id+'" onchange="return ValidateFileUpload(\''+id+'\',\''+resId+'\')" accept="image/png, image/jpeg, .webp, .avif"\>';
+    imgHtml+='<input class="form-control" type="file" name="'+strFileUpload+'[]" id="'+id+'" onchange="return ValidateFileUpload(id,resId)" accept="image/png, image/jpeg, .webp, .avif"\>';
     imgHtml+='</div>';
     imgHtml+='<div class="col-3 col-xs-3 col-md-2 mb-1" id="wrapResultImg_'+data.no+'">';
-    imgHtml+='<img style="height: 40px;border-radius: .375rem" src="'+base_assets+noImage+'" id="'+resId+'" alt="'+base_assets+noImage+'">';
+    imgHtml+='<img style="height: 40px;border-radius: .375rem" src="'+base_assets+'backoffice/'+noImage+'" id="'+resId+'" alt="'+base_assets+'backoffice/'+noImage+'">';
     imgHtml+='</div>';
     imgHtml+='<input type="hidden" name="'+strFileUploaded+'[]" id="'+strFileUploaded+'_'+data.no+'" value=""/>';
 

@@ -21,7 +21,7 @@
 		position: relative;
 		font-size: 16px;
 		line-height: 24px;
-		background-color: transparent !important;
+		background-color: rgba(255,255,255,.3) !important;
 		z-index: 99999;
 		-webkit-text-size-adjust: 100%;
 		-moz-text-size-adjust: 100%;
@@ -458,7 +458,8 @@
 
 		/* ----------------- Viewport Breakpoint ------------------- */
 		.vmm-header-container {
-			height: 90px;
+
+			/*height: 90px;*/
 		}
 		.vmm-header-overlay .vmm-header-container {
 			height: auto;
@@ -1103,7 +1104,7 @@
 		}
 
 		.vmm-menu ul li.current-menu > a, .vmm-menu ul li:hover > a {
-			background-color: #000;
+			background-color: whitesmoke;
 			color: #fff;
 		}
 
@@ -1275,7 +1276,7 @@
 			background-color: #925300;
 		}
 		.vmm-menu > ul {
-			height: 400px;
+			/*height: 400px;*/
 			overflow-x: hidden;
 			overflow-y: scroll;
 		}

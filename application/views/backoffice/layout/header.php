@@ -100,7 +100,7 @@
     </style>
 </head>
 <script>
-let noImage = "assets/no_image.png";
+let noImage = "assets/backoffice/no_image.png";
 let spin = "<?=base_url()?>assets/spin.svg";
 let base_assets = "<?=base_url()?>";
 let pathName = window.location.pathname.split("/");

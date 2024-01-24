@@ -56,6 +56,9 @@ class Client extends MY_Controller
 		$data['name'] = _post('name');
 		$data['image'] = _post('image');
 		$data['youtube'] = _post('youtube');
+		$configUpload = upload($this->tbl,_post($this->fileUploaded),$_FILES[$this->fileUpload]);
+		if($configUpload!=null) $data[$this->gambar]=$configUpload;
+
 		$response[$this->status]=createData($this->tbl,$data,[$this->param=>_post($this->param),$this->id=>_post($this->id)]);
 		echo json_encode($response);
 
